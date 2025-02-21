@@ -4,13 +4,17 @@
     "version": "1.0",
     "description": "Mutes volume during commercials and annoying people while streaming",
     "permissions": [
-      "activeTab",
-      "scripting"
-    ],
-    "content_scripts": [
-      {
-        "matches": ["*://*.youtube.com/*"],
-        "js": ["content.js"]
-      }
-    ]
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*", "*://*.cnbc.com/*"], // Add more sites
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
   }
+}
