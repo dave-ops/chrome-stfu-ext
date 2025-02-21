@@ -5,12 +5,20 @@
 </head>
 <body>
   <h1>AdMute Settings</h1>
-  <label>Region X: <input id="regionX" type="number" value="0"></label><br>
-  <label>Region Y: <input id="regionY" type="number" value="0"></label><br>
-  <label>Width: <input id="regionWidth" type="number" value="0"></label><br>
-  <label>Height: <input id="regionHeight" type="number" value="0"></label><br>
-  <label>Black Threshold (0-1): <input id="threshold" type="number" step="0.1" value="0.8"></label><br>
-  <button id="save">Save Rules</button>
+  <div id="newProviderForm" style="display: none;">
+    <p>Unknown provider detected for: <span id="providerUrl"></span></p>
+    <p>Would you like to create a new provider?</p>
+    <label>Detection Method:</label><br>
+    <input type="radio" name="detectionMethod" value="pixel" checked> Pixel Detection<br>
+    <input type="radio" name="detectionMethod" value="dom"> DOM Detection<br>
+    <label>Region Y (offset from bottom, negative): <input id="regionY" type="number" value="-50"></label><br>
+    <label>Region Width (100% or pixels): <input id="regionWidth" type="text" value="100%"></label><br>
+    <label>Region Height (pixels): <input id="regionHeight" type="number" value="50"></label><br>
+    <label>Black Threshold (0-1): <input id="threshold" type="number" step="0.1" value="0.8"></label><br>
+    <label>Volume Threshold (0-1): <input id="volumeThreshold" type="number" step="0.1" value="0.3"></label><br>
+    <label>Time Jump Threshold (seconds): <input id="timeJumpThreshold" type="number" step="1" value="5"></label><br>
+    <button id="save">Save Rules</button>
+  </div>
 
   <script src="popup.js"></script>
 </body>
