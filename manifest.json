@@ -1,0 +1,16 @@
+{
+    "manifest_version": 3,
+    "name": "chrome-stfu-ext",
+    "version": "1.0",
+    "description": "Mutes volume during commercials and annoying people while streaming",
+    "permissions": [
+      "activeTab",
+      "scripting"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["*://*.youtube.com/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
